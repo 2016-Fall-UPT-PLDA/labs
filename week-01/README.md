@@ -103,7 +103,7 @@ final class AddN {
   println(add1.add(42))
 ```
 
-Functional programming is most likely a bunch of these little pieces but together. Of course, this analogy ends here, and I'll let you think about the differences and implications of these differences until next week!  
+Functional programming is most likely a bunch of these little pieces put together. Of course, this analogy ends here, and I'll let you think about the differences and implications of these differences until next week!  
 
 #### Currying
 

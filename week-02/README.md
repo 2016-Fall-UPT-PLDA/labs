@@ -1,3 +1,5 @@
+# Week 2 - October 4th, 2016
+
 ### Referential transparency and immutability
 
 Take the following Java program as an example:

@@ -1,4 +1,4 @@
-# Week 1 - September 29th, 2015
+# Week 1 - September 27th, 2016
 
 A few suggestions on how to read through this text: you should read through everything linearly, shallow fashion, at first; then re-start and follow the hyperlinks in the text. You can find most references enumerated at the bottom as well. Good luck, and have fun!  
 

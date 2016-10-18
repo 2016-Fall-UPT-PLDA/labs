@@ -102,7 +102,6 @@ option  p q = Parser $ \s ->
 --------------------------------------------------------------------------
 ------------------------------ Basic Parsers -----------------------------
 --------------------------------------------------------------------------
-
 context :: Parser a -> String -> Parser a
 context p newMsg = 
     Parser $ \input ->
@@ -125,8 +124,27 @@ literalChar c =
             then return r1 
             else fail $ "expected: " ++ (show c) ++ ", but received: " ++ (show r1)  
 
-literal :: String -> Parser String
-literal s = traverse literalChar s 
+digit :: Parser Char
+digit = 
+    do
+        r1 <- item
+        if(isDigit r1) 
+            then return r1 
+            else fail $ "expected a digit" ++ ", but received: " ++ (show r1)  
 
+
+literal :: String -> Parser String
+literal s = traverse literalChar s
+
+
+spaces :: Parser String
+spaces = many $ literalChar ' '
+
+token :: Parser a -> Parser a
+token p = do 
+    spaces
+    a <- p 
+    spaces  
+    return a
 --TODO:
 -- implement MultiFailure

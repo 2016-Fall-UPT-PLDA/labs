@@ -83,6 +83,20 @@ instance Monad Parser where
             return r1
     fail msg = Parser $ \s -> Failure msg
 
+instance MonadPlus Parser where
+  mzero = Parser (\input -> Failure "parser failed")
+  mplus p q = undefined -- how to combine two parsers?
+
+instance Alternative Parser where
+  empty = mzero
+  (<|>) = option
+
+option :: Parser a -> Parser a -> Parser a
+option  p q = Parser $ \s ->
+  case parse p s of
+    Failure msg -> parse q s
+    res -> res
+
 
 
 --------------------------------------------------------------------------
@@ -96,7 +110,6 @@ context p newMsg =
                 case r1 of
                     Failure msg -> Failure $msg ++ " ====> " ++ newMsg
                     s -> s
-
 
 item :: Parser Char
 item = Parser $ \input ->

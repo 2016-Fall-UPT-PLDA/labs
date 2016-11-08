@@ -13,6 +13,7 @@ Basic summary of scala concepts that we talked about:
  - [traits](http://docs.scala-lang.org/tutorials/tour/traits.html)
  - [case classes](http://docs.scala-lang.org/tutorials/tour/case-classes.html)
  - [singleton objects](http://docs.scala-lang.org/tutorials/tour/singleton-objects.html)
+ - [DSLs in scala](http://www.scala-lang.org/old/node/1403)
 
  
 Basic summary of what we forgot to talk about:
